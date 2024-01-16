@@ -1,0 +1,544 @@
+@charset "utf-8";
+body,
+html {
+    overflow-x: hidden;
+}
+
+#wrap {
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 11;
+    padding: 1% 10%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.header.hs {
+    top: -100px;
+}
+
+.header.bg {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+}
+
+.header .logo {
+    width: 50%;
+    height: 100px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 100px;
+}
+
+.header .icon {
+    float: right;
+    width: 50%;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.header .icon ul li {
+    float: left;
+    transition: all 0.3s;
+    margin-right: 20px;
+}
+
+.header .icon ul li:hover {
+    transform: scale(1.1);
+}
+
+.header .icon ul li:last-child {
+    margin-right: 0;
+}
+
+.header .icon ul li:first-child {
+    position: relative;
+}
+
+.header .icon ul li input {
+    position: absolute;
+    top: 0;
+    left: -210px;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    outline: none;
+    padding: 0 15px;
+    border: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header .icon ul li input.show3 {
+    opacity: 1;
+}
+
+/* nav */
+.nav {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/nav_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    object-fit: cover;
+    display: none;
+    transition: all 0.3s;
+    transform-origin: center;
+    position: fixed;
+}
+
+.nav.on {
+    display: block;
+}
+
+.header .nav>ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .nav>ul>li {
+    float: left;
+    width: 25%;
+    height: 80%;
+    box-sizing: border-box;
+    border-right: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+
+.header .nav::before {
+    content: "";
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+@keyframes on {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.header .nav.hover2::before {
+    background-image: url(../images/bg3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: on 0.5s forwards;
+}
+
+.header .nav.hover3::before {
+    background-image: url(../images/bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: on 0.5s forwards;
+}
+
+.header .nav.hover4::before {
+    background-image: url(../images/bg2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    width: 1920px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: on 0.5s forwards;
+}
+
+.header .nav>ul>li:last-child {
+    border-right: 0;
+}
+
+.header .nav>ul>li>a {
+    color: #fff;
+    font-size: 60px;
+    font-family: 'DM Serif Display', serif;
+    text-align: center;
+    display: block;
+    transition: all 0.3s;
+}
+
+.header .nav>ul>li:hover>a {
+    font-size: 70px;
+    transform: translateY(-10px);
+    text-shadow: 2px 2px 5px #333;
+}
+
+.header .nav>ul>li>.submenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header .nav>ul>li>.submenu>li{
+    text-align: center;
+    width: 100%;
+}
+.header .nav>ul>li>.submenu>li>a {
+    /* display: block; */
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-family: 'Pretendard-Regular';
+    line-height: 3;
+    white-space: nowrap;
+    color: #fff;
+    position: relative;
+}
+
+.header .nav>ul>li>.submenu>li>a::before {
+    width: 0px;
+    height: 3px;
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    transition: all 0.5s;
+    border-radius: 6px;
+}
+
+.header .nav>ul>li>.submenu>li>a:hover::before {
+    width: 100%;
+}
+
+.header .close {
+    position: absolute;
+    top: 6%;
+    right: 11%;
+    transition: all 0.3s;
+}
+
+.header .close img {
+    width: 30px;
+}
+
+.header .close:hover {
+    transform: scale(1.1);
+}
+
+/* banner */
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.banner .pic{
+    height: 100vh;
+}
+.banner .pic img{
+    animation: scale 10s linear 1;
+}
+@keyframes scale{
+    0%{transform: scale(1.3);}
+    100%{transform: scale(1);}
+}
+.banner .txt{
+    position: absolute;
+    top: 29.5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    overflow: hidden;
+    animation: txt 2.5s linear 1;
+    transition: all 0.3s;
+}
+@keyframes txt {
+    0%{top: 0%;opacity: 0;}
+    50%{top: 10%;opacity: 0;}
+    70%{top: 20%;opacity: 0;}
+    95%{top: 28%;opacity: 0.5;}
+    96%{top: 28.2%;opacity: 0.6;}
+    97%{top: 28.5%;opacity: 0.7;}
+    98%{top: 28.7%;opacity: 0.8;}
+    99%{top: 29%;opacity: 0.9;}
+    100%{top: 29.5%;opacity: 1;}
+}
+
+.banner .txt b{
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    font-size: 100px;
+}
+.banner .txt span{
+    font-family: 'Pretendard-Regular';
+    font-style: italic;
+    color: #333;
+}
+
+/* contents */
+.contents1{
+    width: 100%;
+    height: 220vh;
+    padding: 100px 0;
+    position: relative;
+}
+.contents1 .left{
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+.contents1 .left::before{
+    position: absolute;
+    content: "";
+    width: 500px;
+    height: 650px;
+    background: url(../images/jou.png) no-repeat;
+    background-position: center center;
+    top: 170px;
+    left: 370px;
+    z-index: -1;
+}
+.contents1 .left.fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.contents1 .left .txt{
+    text-align: left;
+    font-family: 'DM Serif Display', serif;
+    padding: 200px 150px;
+}
+.contents1 .left .txt span p{
+    font-size: 120px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.contents1 .left .txt span i{
+    color: #000;
+    font-size: 100px;
+}
+.contents1 .right{
+    width: 50%;
+    float: right;
+    border-left: 1px solid #ccc;
+}
+.contents1 .right ul{}
+.contents1 .right ul li{
+    width: 90%;
+    height: 30vh;
+    /* padding-left: 10%; */
+    padding: 15vh 5vh;
+    margin-bottom: 10%;
+    opacity: 0;
+    transition: all 1s;
+}
+.contents1 .right ul li.active{
+    opacity: 1;
+}
+.contents1 .right ul li .txt{
+    float: left;
+}
+.contents1 .right ul li .txt b{
+    font-family: 'Pretendard-Regular';
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 3%;
+    display: block;
+    position: relative;
+}
+.contents1 .right ul li .txt b::before{
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #778eae;
+    border-radius: 10px;
+    left: -53px;
+    top: 27px;
+}
+.contents1 .right ul li .txt b::after{
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #778eae;
+    opacity: 0.3;
+    border-radius: 50%;
+    left: -59px;
+    top: 21px;
+    animation: circle 1s linear infinite;
+}
+@keyframes circle{
+    0%{opacity: 0.1;}
+    50%{opacity: 0.2;}
+    70%{opacity: 0.3;}
+    80%{opacity: 0.2;}
+    100%{opacity: 0.1;}
+}
+.contents1 .right ul li .txt p{
+    font-family: 'Pretendard-Regular';
+    line-height: 1.6;
+}
+.contents1 .right ul li .pic{
+    float: left;
+    padding-left: 30%;
+    padding-top: 5%;
+}
+/* box */
+body{position: relative;}
+.box{
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.contents2{
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.contents2 .pic{
+    height: 600px;
+    overflow: hidden;
+}
+.contents2 .pic img{
+    animation: scale2 10s linear 1;
+}
+@keyframes scale2 {
+    0%{transform: scale(1.3);}
+    100%{transform: scale(1);}
+}
+
+.contents2 .left{
+    width: 50%;
+    float: left;
+    position: relative;
+    margin-top: -560px;
+    height: 500px;
+    padding: 100px;
+}
+.contents2 .left .icon{}
+.contents2 .left .icon ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    /* border: 2px dotted #fff; */
+    border-radius: 30px;
+}
+.contents2 .left .icon ul li{}
+.contents2 .left .icon ul li img{
+    width: 30%;
+    filter: invert(100%);
+    margin-left: 90px;
+    margin-bottom: 7%;
+}
+.contents2 .left .icon ul li a{
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 1.6;
+    font-family: 'Pretendard-Regular';
+}
+.contents2 .left .icon ul li p{
+    font-size: 17px;
+}
+.contents2 .left .icon ul li span{
+    font-size: 14px;
+}
+.contents2 .r_wrap{
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    height: 500px;
+    /* border: 1px solid #ccc; */
+    padding: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 40%;
+    overflow: hidden;
+    float: right;
+}
+.contents2 .re{
+    width: 50%;
+    float: left;
+    border-right: 1px solid #fff;
+}
+.contents2 .txt{
+    width: 50%;
+    float: left;
+    padding-left: 25px;
+    text-align: center;
+    display: block;
+}
+
+.contents2 h2{
+    font-size: 45px;
+    font-family: 'DM Serif Display', serif;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 5px #333;
+    margin-bottom: 2%;
+}
+.contents2 input{
+    display: block;
+    width: 85%;
+    height: 100%;
+    margin-bottom: 3%;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #fff;
+    font-family: 'Pretendard-Regular';
+}
+.contents2 #msg{
+    width: 85%;
+    height: 250px;
+    outline: none;
+    border: 0;
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Pretendard-Regular';
+}
+

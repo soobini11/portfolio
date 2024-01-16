@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* font-family: 'DM Serif Display', serif; */
+
+body, html{overflow-x: hidden;}
+ul, li, ol, dl{list-style: none;}
+a{text-decoration: none;}
+img{
+    display: block;
+    /* width: 100%; */
+}
+address, em{font-style: normal;}
+button {border: 0; outline: none;}
+.clearfix::before, .clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
